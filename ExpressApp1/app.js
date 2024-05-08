@@ -11,12 +11,12 @@ const session = require('express-session');
 const routes = require('./routes/index');
 const posts = require('./routes/posts');
 const categories = require('./routes/category');
-const authRoutes = require('./routes/auth'); // Importa le route di autenticazione
+const authRoutes = require('./routes/auth'); 
 
 const app = express();
 
 const passport = require('passport');
-require('./routes/auth'); // Importa la configurazione di Passport
+require('./routes/auth'); 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,7 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/posts', posts);
 app.use('/category', categories);
-app.use('/', authRoutes); // Usa le route di autenticazione
+app.use('/', authRoutes); 
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
